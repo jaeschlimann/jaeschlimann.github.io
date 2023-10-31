@@ -35,18 +35,21 @@ a{
     height: 100vh;
     justify-content: center;
     overflow: hidden;
-    -webkit-box-flex: ;
     /*display: flex;
     justify-content: center;
   */
 }
 
   .box>img{
-    max-height: 100%;
     width: auto;
-    object-fit: contain;
-    -o-object-fit: contain;
+    max-height: 100%;
+    /* min-height: 100%;
+    
+  
+    -o-object-fit: fill;*/
+    /*scale: 1.14;*/
 }
+
 
 /*---sections */
 
