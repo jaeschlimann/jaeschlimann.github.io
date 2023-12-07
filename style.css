@@ -16,11 +16,26 @@
   
 body{
     font-family: "Ambiant-Medium",Arial, Helvetica, sans-serif;
-    font-size: 14pt;
+  
+    font-size: 13pt;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: black;
+}
+h1,h2{
+    font-size: 13pt; 
+    color: orangered;
+}
+
+h3{
+    font-size: 16pt;
+    color: black;
+}
+
+p{
+    font-size: 13pt;
+    color: black;
 }
 
 a{
@@ -39,6 +54,7 @@ a{
     width: 100%;
     height: 100vh;
     overflow: hidden;
+
     
 }
 
@@ -62,8 +78,8 @@ a{
 }
 
 .box>img{
-    width: auto;
-    max-height: 100%;
+   width: 100%;  
+    height: auto;
     /* min-height: 100%;
     
   
@@ -75,7 +91,8 @@ a{
 /*---sections */
 
 .section{
-    padding: 10px;
+    font-size: 16pt;
+    padding: 20px;
     padding-top: 50px;
     position: absolute;
     width: 50vw;
