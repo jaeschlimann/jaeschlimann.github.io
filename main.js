@@ -1,5 +1,19 @@
 console.clear();
 
+document.onreadystatechange = function(){
+  if(document.readyState !== "complete"){
+   console.log("loading");
+
+   document.querySelector("body").style.visibility ="hidden";
+
+  }else{
+    console.log("complete");
+    document.querySelector("body").style.visibility ="visible";
+  }
+
+}
+
+
 const info_button = document.querySelector(".nav-infos");
 const projects_button = document.querySelector(".nav-projects");
 
