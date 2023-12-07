@@ -1,7 +1,22 @@
+@font-face {
+    font-family: "Ambiant-Medium";
+    src: url('assets/fonts/Ambiant-Medium.otf');
+    src: url('assets/fonts/Ambiant-Medium.otf') format('opentype'),
+         url('assets/fonts/Ambiant-Medium.woff2') format('woff2'),
+         url('assets/fonts/Ambiant-Medium.woff') format('woff'),
+         url('assets/fonts/Ambiant-Medium.ttf') format('truetype');
+  }
+    
+  
 * {
     box-sizing: border-box;
-  }
+}
+
+
+  
 body{
+    font-family: "Ambiant-Medium",Arial, Helvetica, sans-serif;
+    font-size: 14pt;
     margin: 0;
     padding: 0;
     overflow: hidden;
