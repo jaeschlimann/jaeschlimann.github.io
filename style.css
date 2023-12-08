@@ -25,7 +25,7 @@ body{
 }
 h1,h2{
     font-size: 13pt; 
-    color: orangered;
+    color: F95400;
 }
 
 h3{
@@ -40,7 +40,7 @@ p{
 
 a{
     text-decoration: none;
-    color: orangered;
+    color: F95400;
 }
 
 .nav:nth-child(n) a{
