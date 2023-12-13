@@ -12,18 +12,24 @@
     box-sizing: border-box;
 }
 
-
   
 body{
     font-family: "Ambiant-Medium",Arial, Helvetica, sans-serif;
-  
     font-size: 13pt;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: black;
 }
-h1,h2{
+
+/* ---- font system ----- */
+
+h1{
+    font-size: 13pt; 
+    color: #F95400;
+}
+
+h2{
     font-size: 13pt; 
     color: #F95400;
 }
@@ -36,27 +42,42 @@ h3{
 p{
     font-size: 13pt;
     color: black;
+    line-height: 1.2;
 }
 
+/* liens */
 a{
     text-decoration: none;
     color: #F95400;
-
+    cursor: pointer;
 }
+
+a:hover{
+  font-style: italic;
+}
+
+/* liens sur page projet */
+.project-link{
+    color: black;
+}
+.project-link:hover{
+    color: #F95400;
+    cursor: pointer;
+}
+
+
 
 .nav:nth-child(n) a{
     cursor:pointer;
 }
 .nav-sup>.col, .nav-bottom>.col{
-    padding: 10px;
+    padding:20px;
 }
 
 .home-container {
     width: 100%;
     height: 100vh;
-    overflow: hidden;
-
-    
+    overflow: hidden;    
 }
 
 .column {
@@ -78,8 +99,9 @@ a{
  height: auto;
 }
 
-.box>img{
-   width: 100%;  
+.box>.img-project{
+   
+    min-width: 100%;  
     height: auto;
     /* min-height: 100%;
     
@@ -88,40 +110,140 @@ a{
     /*scale: 1.14;*/
 }
 
+/*projects selection page*/
 
+.projects-list{
+
+/* background-color: yellow; */
+
+}
+#project{
+  
+}
+.project-content img{
+    width: 50vw;
+    height: 100;
+}
+.project-content{
+    padding-left: 0;
+
+}
+.content-1{
+    background-color:yellow;
+
+}
+
+.project-list>h3{
+}
+.p-title{
+    position:relative;
+    width: 400px;
+    /* background-color: blue; */
+
+}
+.p-date{
+    /* background-color: aquamarine; */
+}
+.p-type{
+    position: relative;
+    /* background-color: azure; */
+}
+.p-title, .p-type{
+
+}
 /*---sections */
 
 .section{
-    font-size: 16pt;
-    padding: 20px;
-    padding-top: 50px;
     position: absolute;
     width: 50vw;
     height: 100vh;
+    font-size: 16pt;
+    padding: 20px;
+    padding-top: 50px;
 }
 
-.p-section1{
-    top: -100VH;
+.left-section{
+    left: 0;
+    top: 100vh;
+    background-color: white;
+}
+
+.left-section>div{
+    padding-top: 40px;
+
+}
+.right-section{
+    left: 50vw;
+    top:-100vh;
+    background-color: aliceblue;
+}
+
+.project-image{
+    overflow-x:hidden;
+overflow-y: auto;  
+}
+
+.p-section-texte{
+    top: 100VH; 
     left: 0;
     background-color: rgb(255, 255, 255);*/
 }
 
-.p-section2{
-    top: 100vh;
+.p-section-image{
+    padding: 0;
+    top: -100vh;
     left: 50vw;
- background-color: rgb(245, 44, 184);
+ background-color: rgba(255, 255, 255, 0.434);
 
 }
 
-
-.i-section1{
-    top: 100vh;
-    left: 0;
-    background-color: transparent;
+.img-project{
+    height: 100%;
 }
 
-.i-section2{
+
+.i-section{  
     top: -100vh;
     left: 50vw;
     background-color: rgb(255, 255, 255);
+}
+
+
+/*project page*/
+
+/* #project{
+    position:absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: chocolate;
+} */
+header{
+    z-index: 0;
+}
+#home, #projects, {
+    z-index:0;
+}
+
+
+.content{
+opacity: 1;}
+
+
+.nav-bottom,nav-infos{
+    z-index: 2;
+}
+.nav-title{
+    z-index: 999999;
+}
+.project-image{
+    padding: 0;
+    z-index: 9999999;
+}
+
+.close-btn{
+    position: fixed;
+    right: 0;
+    padding: 15px;
+    top: 0;
+    z-index: 99999;
 }
