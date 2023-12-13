@@ -90,14 +90,17 @@ projects_button.addEventListener("click", function(){
   var panel1 = ".p-section-texte";
   var panel2 = ".p-section-image";
   if(projectOpen){
-
+    if(!projectsIsOpen){
+      openLeftPanel(panel1);
+      openRightPanel(panel2);
+      projectsIsOpen = true;
+    }
     var p_leftPanel = ".project-text";
     var p_rightPanel = ".project-image";
     closeRightPanel(p_rightPanel);
     closeLeftPanel(p_leftPanel);
     projectOpen = false;
-    openLeftPanel(panel1);
-    openRightPanel(panel2);
+    
 
   }else{
     
@@ -116,9 +119,9 @@ projects_button.addEventListener("click", function(){
       onHomepage = true;
       }
   console.log("is open:", projectsIsOpen);
-
-  }
   projectsIsOpen = !projectsIsOpen;
+  }
+  
 
 });
 
@@ -168,19 +171,20 @@ function closeLeftPanel(target){
 }
 
 
+
 project_button.addEventListener("click", function(){
   console.log("open project");
 
   var leftPanel = ".project-text";
   var rightPanel = ".project-image";
 
-  if(projectsIsOpen){
+  /*if(projectsIsOpen){
     var projectPanel1 = ".p-section-texte";
     var projectPanel2 = ".p-section-image";
       closeLeftPanel(projectPanel1);
       closeRightPanel(projectPanel2);
       projectsIsOpen = false;
-  }
+  }*/
 
   openRightPanel(rightPanel);
   openLeftPanel(leftPanel);
@@ -188,7 +192,6 @@ project_button.addEventListener("click", function(){
   onHomepage = false;
   projectOpen = true;
 
-  /*body.style.overflow = "scroll";*/
 });
 
 
@@ -198,5 +201,13 @@ project_closebutton.addEventListener("click", function(){
   closeRightPanel(rightPanel);
   closeLeftPanel(leftPanel);
   onHomepage = true;
+
+  if(!projectsIsOpen){
+    var projectPanel1 = ".p-section-texte";
+    var projectPanel2 = ".p-section-image";
+    openLeftPanel(projectPanel1);
+    openRightPanel(projectPanel2);
+    projectsIsOpen = true;
+  }
 
 });

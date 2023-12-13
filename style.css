@@ -178,6 +178,7 @@ a:hover{
     background-color: aliceblue;
 }
 
+
 .project-image{
     overflow-x:hidden;
 overflow-y: auto;  
@@ -187,6 +188,11 @@ overflow-y: auto;
     top: 100VH; 
     left: 0;
     background-color: rgb(255, 255, 255);*/
+}
+
+.project-text{
+    /* top: 0; */
+    /* visibility: hidden; */
 }
 
 .p-section-image{
@@ -218,19 +224,24 @@ overflow-y: auto;
     background-color: chocolate;
 } */
 header{
-    z-index: 0;
+    z-index: 4;
 }
 #home, #projects, {
     z-index:0;
 }
 
+.project-text{
+    z-index: 2;
+}
 
 .content{
 opacity: 1;}
-
+.p-section-texte{
+    z-index: 1;
+}
 
 .nav-bottom,nav-infos{
-    z-index: 2;
+    z-index: 4;
 }
 .nav-title{
     z-index: 999999;
@@ -240,8 +251,9 @@ opacity: 1;}
     z-index: 9999999;
 }
 
+
 .close-btn{
-    position: fixed;
+    position: absolute;
     right: 0;
     padding: 15px;
     top: 0;
