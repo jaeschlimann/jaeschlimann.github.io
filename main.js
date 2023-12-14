@@ -3,9 +3,7 @@ console.clear();
 document.onreadystatechange = function(){
   if(document.readyState !== "complete"){
    console.log("loading");
-
    document.querySelector("body").style.visibility ="hidden";
-
   }else{
     console.log("complete");
     document.querySelector("body").style.visibility ="visible";
@@ -13,11 +11,7 @@ document.onreadystatechange = function(){
 
 }
 
-let body = document.querySelector("body");
-const info_button = document.querySelector(".nav-infos");
-const projects_button = document.querySelector(".nav-projects");
-const project_button = document.querySelector(".project-link");
-const project_closebutton = document.querySelector(".close-btn");
+
 
 let isTweening = false;
 let currentSection = 0;
@@ -76,40 +70,40 @@ Observer.create({
 
 /*section interaction*/
 
-let i_direction = true;
 //let p_direction = true;
-let infosIsOpen = false;
-let projectsIsOpen = false;
-let projectOpen = false;
+let isInformationPageOpen = false;
+let isProjectsPageOpen = false;
+let isProjectPageOpen = false;
 const duration = 1;
 
 
+const projectSelectionButton = document.querySelector(".nav-projects");
 
-projects_button.addEventListener("click", function(){
+projectSelectionButton.addEventListener("click", function(){
   
   var panel1 = ".p-section-texte";
   var panel2 = ".p-section-image";
-  if(projectOpen){
-    if(!projectsIsOpen){
+  if(isProjectPageOpen){
+    if(!isProjectsPageOpen){
       openLeftPanel(panel1);
       openRightPanel(panel2);
-      projectsIsOpen = true;
+      isProjectsPageOpen = true;
     }
     var p_leftPanel = ".project-text";
     var p_rightPanel = ".project-image";
     closeRightPanel(p_rightPanel);
     //closeLeftPanel(p_leftPanel);
     hideProjectPageLeft();
-    projectOpen = false;
+    isProjectPageOpen = false;
     
 
   }else{
     
-      if(!projectsIsOpen){
-        if(infosIsOpen){
+      if(!isProjectsPageOpen){
+        if(isInformationPageOpen){
             let infoPanel = ".i-section";
             closeRightPanel(infoPanel);
-            infosIsOpen = false;
+            isInformationPageOpen = false;
         }
       openLeftPanel(panel1);
       openRightPanel(panel2);
@@ -119,25 +113,53 @@ projects_button.addEventListener("click", function(){
       closeRightPanel(panel2);
       onHomepage = true;
       }
-  console.log("is open:", projectsIsOpen);
-  projectsIsOpen = !projectsIsOpen;
+  console.log("is open:", isProjectsPageOpen);
+  isProjectsPageOpen = !isProjectsPageOpen;
   }
   
 
 });
+const homeButton = document.querySelector(".nav-title");
+homeButton.addEventListener("click", function(){
+  if(isInformationPageOpen) {
+    var infoPanel = ".i-section";
+    closeRightPanel(infoPanel);
+    isInformationPageOpen = false;
+  }
 
+  if(isProjectsPageOpen){
+    var projectPanelLeft = ".p-section-texte";
+    var projectPanelRight = ".p-section-image";
+    closeLeftPanel(projectPanelLeft);
+    closeRightPanel(projectPanelRight);
+    isProjectsPageOpen = false;
 
+    if(isProjectPageOpen){
+      var projectPanelLeft = ".project-text";
+      var projectPanelRight = ".project-image";
+      closeRightPanel(projectPanelRight);
+      hideProjectPageLeft();
+      isProjectPageOpen = false;
+      
+    }
+  }
+  
+  
+  onHomepage = true;
+ 
+});
 
-info_button.addEventListener("click", function(){
+const infoButton = document.querySelector(".nav-infos");
+infoButton.addEventListener("click", function(){
     var infoPanel = ".i-section";
  
-    if(!infosIsOpen){
-        if(projectsIsOpen){
+    if(!isInformationPageOpen){
+        if(isProjectsPageOpen){
           var projectPanel1 = ".p-section-texte";
           var projectPanel2 = ".p-section-image";
             closeLeftPanel(projectPanel1);
             closeRightPanel(projectPanel2);
-            projectsIsOpen = false;
+            isProjectsPageOpen = false;
         }
         console.log("open");
         onHomepage = false;
@@ -147,8 +169,8 @@ info_button.addEventListener("click", function(){
       onHomepage = true;
         closeRightPanel(infoPanel);
     }
-    infosIsOpen = !infosIsOpen;
-    console.log("infosIsOpen:", infosIsOpen);
+    isInformationPageOpen = !isInformationPageOpen;
+    console.log("isInformationPageOpen:", isInformationPageOpen);
     
 });
 
@@ -176,26 +198,26 @@ projectLinks.forEach(function(link) {
   //openLeftPanel(leftPanel);
   console.log("open");
   onHomepage = false;
-  projectOpen = true;
+  isProjectPageOpen = true;
 
 
   });
 
 });
+const openProjectButton = document.querySelector(".project-link");
 
-project_button.addEventListener("click", function(){
-  console.log("open project");
+openProjectButton.addEventListener("click", function(){
 
   var leftPanel = ".project-text";
   var leftPanelObjet = document.querySelector(".project-text");
   var rightPanel = ".project-image";
 
-  /*if(projectsIsOpen){
+  /*if(isProjectsPageOpen){
     var projectPanel1 = ".p-section-texte";
     var projectPanel2 = ".p-section-image";
       closeLeftPanel(projectPanel1);
       closeRightPanel(projectPanel2);
-      projectsIsOpen = false;
+      isProjectsPageOpen = false;
   }*/
 
   openRightPanel(rightPanel);
@@ -203,12 +225,13 @@ project_button.addEventListener("click", function(){
   //openLeftPanel(leftPanel);
   console.log("open");
   onHomepage = false;
-  projectOpen = true;
+  isProjectPageOpen = true;
 
 });
 
+const closeProjectbutton = document.querySelector(".close-btn");
 
-project_closebutton.addEventListener("click", function(){
+closeProjectbutton.addEventListener("click", function(){
   closeProjectPage();
 });
 
@@ -228,15 +251,15 @@ function closeProjectPage(){
   
   onHomepage = true;
 
-  if(!projectsIsOpen){
+  if(!isProjectsPageOpen){
     var projectPanel1 = ".p-section-texte";
     var projectPanel2 = ".p-section-image";
     openLeftPanel(projectPanel1);
     openRightPanel(projectPanel2);
-    projectsIsOpen = true;
+    isProjectsPageOpen = true;
   }
 
-  projectOpen = false;
+  isProjectPageOpen = false;
 
 }
 
