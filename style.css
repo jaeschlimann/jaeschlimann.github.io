@@ -57,14 +57,21 @@ a:hover{
 }
 
 /* liens sur page projet */
-.project-link{
+.project-link,.project-title{
     color: black;
 }
 .project-link:hover{
     color: #F95400;
     cursor: pointer;
+    font-style: normal;
 }
 
+
+.project-title:hover{
+    color: #F95400;
+    cursor: pointer;
+    font-style: normal;
+}
 
 
 .nav:nth-child(n) a{
@@ -103,23 +110,11 @@ a:hover{
    
     min-width: 100%;  
     height: auto;
-    /* min-height: 100%;
-    
-  
-    -o-object-fit: fill;*/
-    /*scale: 1.14;*/
+ 
 }
 
-/*projects selection page*/
 
-.projects-list{
 
-/* background-color: yellow; */
-
-}
-#project{
-  
-}
 .project-content img{
     width: 50vw;
     height: 100;
@@ -133,24 +128,20 @@ a:hover{
 
 }
 
-.project-list>h3{
-}
+
+
+
 .p-title{
     position:relative;
     width: 400px;
-    /* background-color: blue; */
-
 }
 .p-date{
-    /* background-color: aquamarine; */
 }
 .p-type{
     position: relative;
-    /* background-color: azure; */
 }
-.p-title, .p-type{
 
-}
+
 /*---sections */
 
 .section{
@@ -187,25 +178,26 @@ overflow-y: auto;
 .p-section-texte{
     top: 100VH; 
     left: 0;
-    background-color: rgb(255, 255, 255);*/
+    background-color: rgb(255, 255, 255);
 }
 
 .project-text{
-    /* top: 0; */
-    /* visibility: hidden; */
+    top: 0; 
+    visibility: hidden;
 }
 
 .p-section-image{
     padding: 0;
     top: -100vh;
     left: 50vw;
- background-color: rgba(255, 255, 255, 0.434);
 
 }
-
 .img-project{
     height: 100%;
+    /* opacity: 0; */
 }
+
+
 
 
 .i-section{  
