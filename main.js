@@ -177,6 +177,19 @@ infoButton.addEventListener("click", function(){
 var projectLinks = document.querySelectorAll('.project-link');
 
 projectLinks.forEach(function(link) {
+
+  link.addEventListener('mouseover',function(event){
+    console.log("over");
+    let imageProjectCover = document.querySelector(".img-project");
+    imageProjectCover.style.opacity = 1;
+  });
+
+  link.addEventListener('mouseout',function(event){
+    console.log("out");
+    let imageProjectCover = document.querySelector(".img-project");
+    imageProjectCover.style.opacity = 0;
+  });
+
   link.addEventListener('click', function(event) {
 
     console.log("open project");
@@ -195,8 +208,6 @@ projectLinks.forEach(function(link) {
 
   openRightPanel(rightPanel);
   leftPanelObjet.style.visibility = 'visible';
-  //openLeftPanel(leftPanel);
-  console.log("open");
   onHomepage = false;
   isProjectPageOpen = true;
 
@@ -211,7 +222,7 @@ openProjectButton.addEventListener("click", function(){
   var leftPanel = ".project-text";
   var leftPanelObjet = document.querySelector(".project-text");
   var rightPanel = ".project-image";
-
+  
   /*if(isProjectsPageOpen){
     var projectPanel1 = ".p-section-texte";
     var projectPanel2 = ".p-section-image";
