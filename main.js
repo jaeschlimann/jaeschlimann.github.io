@@ -81,8 +81,8 @@ const projectSelectionButton = document.querySelector(".nav-projects");
 
 projectSelectionButton.addEventListener("click", function(){
   
-  var panel1 = ".p-section-texte";
-  var panel2 = ".p-section-image";
+  var panel1 = ".projectSectionTexte";
+  var panel2 = ".projectSectionImage";
   if(isProjectPageOpen){
     if(!isProjectsPageOpen){
       openLeftPanel(panel1);
@@ -113,7 +113,6 @@ projectSelectionButton.addEventListener("click", function(){
       closeRightPanel(panel2);
       onHomepage = true;
       }
-  console.log("is open:", isProjectsPageOpen);
   isProjectsPageOpen = !isProjectsPageOpen;
   }
   
@@ -128,8 +127,8 @@ homeButton.addEventListener("click", function(){
   }
 
   if(isProjectsPageOpen){
-    var projectPanelLeft = ".p-section-texte";
-    var projectPanelRight = ".p-section-image";
+    var projectPanelLeft = ".projectSectionTexte";
+    var projectPanelRight = ".projectSectionImage";
     closeLeftPanel(projectPanelLeft);
     closeRightPanel(projectPanelRight);
     isProjectsPageOpen = false;
@@ -155,22 +154,19 @@ infoButton.addEventListener("click", function(){
  
     if(!isInformationPageOpen){
         if(isProjectsPageOpen){
-          var projectPanel1 = ".p-section-texte";
-          var projectPanel2 = ".p-section-image";
+          var projectPanel1 = ".projectSectionTexte";
+          var projectPanel2 = ".projectSectionImage";
             closeLeftPanel(projectPanel1);
             closeRightPanel(projectPanel2);
             isProjectsPageOpen = false;
         }
-        console.log("open");
         onHomepage = false;
         openRightPanel(infoPanel);
     }else{
-      console.log("close");
       onHomepage = true;
         closeRightPanel(infoPanel);
     }
     isInformationPageOpen = !isInformationPageOpen;
-    console.log("isInformationPageOpen:", isInformationPageOpen);
     
 });
 
@@ -179,28 +175,25 @@ var projectLinks = document.querySelectorAll('.project-link');
 projectLinks.forEach(function(link) {
 
   link.addEventListener('mouseover',function(event){
-    console.log("over");
     let imageProjectCover = document.querySelector(".img-project");
     imageProjectCover.style.opacity = 1;
   });
 
   link.addEventListener('mouseout',function(event){
-    console.log("out");
     let imageProjectCover = document.querySelector(".img-project");
     imageProjectCover.style.opacity = 0;
   });
 
   link.addEventListener('click', function(event) {
 
-    console.log("open project");
 
   var leftPanel = ".project-text";
   var leftPanelObjet = document.querySelector(".project-text");
   var rightPanel = ".project-image";
 
   /*if(projectsIsOpen){
-    var projectPanel1 = ".p-section-texte";
-    var projectPanel2 = ".p-section-image";
+    var projectPanel1 = ".projectSectionTexte";
+    var projectPanel2 = ".projectSectionImage";
       closeLeftPanel(projectPanel1);
       closeRightPanel(projectPanel2);
       projectsIsOpen = false;
@@ -224,8 +217,8 @@ openProjectButton.addEventListener("click", function(){
   var rightPanel = ".project-image";
   
   /*if(isProjectsPageOpen){
-    var projectPanel1 = ".p-section-texte";
-    var projectPanel2 = ".p-section-image";
+    var projectPanel1 = ".projectSectionTexte";
+    var projectPanel2 = ".projectSectionImage";
       closeLeftPanel(projectPanel1);
       closeRightPanel(projectPanel2);
       isProjectsPageOpen = false;
@@ -234,7 +227,6 @@ openProjectButton.addEventListener("click", function(){
   openRightPanel(rightPanel);
   leftPanelObjet.style.visibility = 'visible';
   //openLeftPanel(leftPanel);
-  console.log("open");
   onHomepage = false;
   isProjectPageOpen = true;
 
@@ -263,8 +255,8 @@ function closeProjectPage(){
   onHomepage = true;
 
   if(!isProjectsPageOpen){
-    var projectPanel1 = ".p-section-texte";
-    var projectPanel2 = ".p-section-image";
+    var projectPanel1 = ".projectSectionTexte";
+    var projectPanel2 = ".projectSectionImage";
     openLeftPanel(projectPanel1);
     openRightPanel(projectPanel2);
     isProjectsPageOpen = true;
@@ -302,3 +294,4 @@ function closeLeftPanel(target){
 
 
 
+// vidéo player 

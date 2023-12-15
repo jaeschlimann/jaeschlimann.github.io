@@ -15,7 +15,7 @@
   
 body{
     font-family: "Ambiant-Medium",Arial, Helvetica, sans-serif;
-    font-size: 13pt;
+    font-size: 15pt;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -25,22 +25,22 @@ body{
 /* ---- font system ----- */
 
 h1{
-    font-size: 13pt; 
+    font-size: 15pt; 
     color: #F95400;
 }
 
 h2{
-    font-size: 13pt; 
+    font-size: 15pt; 
     color: #F95400;
 }
 
 h3{
-    font-size: 16pt;
+    font-size: 15pt;
     color: black;
 }
 
 p{
-    font-size: 13pt;
+    font-size: 15pt;
     color: black;
     line-height: 1.2;
 }
@@ -54,6 +54,10 @@ a{
 
 a:hover{
   font-style: italic;
+}
+
+.nav-title:hover{
+    font-style: normal;
 }
 
 /* liens sur page projet */
@@ -78,7 +82,7 @@ a:hover{
     cursor:pointer;
 }
 .nav-sup>.col, .nav-bottom>.col{
-    padding:20px;
+    /*padding:20px;*/
 }
 
 .home-container {
@@ -133,7 +137,6 @@ a:hover{
 
 .p-title{
     position:relative;
-    width: 400px;
 }
 .p-date{
 }
@@ -149,7 +152,7 @@ a:hover{
     width: 50vw;
     height: 100vh;
     font-size: 16pt;
-    padding: 20px;
+   /* padding: 20px;*/
     padding-top: 50px;
 }
 
@@ -160,7 +163,7 @@ a:hover{
 }
 
 .left-section>div{
-    padding-top: 40px;
+    padding-top: 40px; 
 
 }
 .right-section{
@@ -175,7 +178,7 @@ a:hover{
 overflow-y: auto;  
 }
 
-.p-section-texte{
+.projectSectionTexte{
     top: 100VH; 
     left: 0;
     background-color: rgb(255, 255, 255);
@@ -186,7 +189,7 @@ overflow-y: auto;
     visibility: hidden;
 }
 
-.p-section-image{
+.projectSectionImage{
     padding: 0;
     top: -100vh;
     left: 50vw;
