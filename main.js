@@ -161,6 +161,7 @@ infoButton.addEventListener("click", function(){
             isProjectsPageOpen = false;
         }
         onHomepage = false;
+        
         openRightPanel(infoPanel);
     }else{
       onHomepage = true;
