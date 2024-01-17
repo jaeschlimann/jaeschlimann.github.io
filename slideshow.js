@@ -2,12 +2,16 @@ var currentImg = 0;
 var imgs = document.querySelectorAll('.slider .slide');
 var buttons = document.querySelectorAll('.buttons');
 let dots = document.querySelectorAll('.dot');
+
+let slideshow = document.getElementById('slideshow');
 let sliderleftButton = document.querySelector('.left-button');
 let sliderrightButton = document.querySelector('.right-button');
+let p_images = document.querySelectorAll('.p-image');
 var interval = 3000;
 var isBackward = false;
 var onImageClick  = false;
 console.log("slideshow");
+
 
 sliderleftButton.addEventListener('click',function(event){
   console.log("click left",currentImg);
@@ -32,6 +36,15 @@ sliderrightButton.addEventListener('click',function(event){
    changeSlide(currentImg);
    console.log("click:",currentImg, "...",imgs.length-1 );
  
+});
+
+p_images.forEach(function(img) {
+  img.addEventListener('click',function(event){
+    console.log("click on img");
+    slideshow.style.visibility='visible';
+    slideshow.style.zIndex='10000000';
+
+    });  
 });
 
 //var timer = setInterval(changeSlide, interval);

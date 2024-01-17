@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-  
+
 body{
     font-family: "Ambiant-Medium",Arial, Helvetica, sans-serif;
     font-size: 15pt;
@@ -89,6 +89,10 @@ a:hover{
     width: 100%;
     height: 100vh;
     overflow: hidden;    
+}
+
+#home{
+    /* opacity: 0; */
 }
 
 .column {
@@ -235,15 +239,19 @@ opacity: 1;}
     z-index: 1;
 }
 
-.nav-bottom,nav-infos{
+.nav-bottom{
     z-index: 4;
+}
+
+.nav-sup{
+    z-index: 9999;
 }
 .nav-title{
     z-index: 999999;
 }
 .project-image{
     padding: 0;
-    z-index: 9999999;
+    z-index: 5;
 }
 
 
@@ -254,3 +262,93 @@ opacity: 1;}
     top: 0;
     z-index: 99999;
 }
+
+/*page slideshow */
+#slideshow{
+visibility: hidden;}
+.slider {
+    background-color: blue;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 4;
+  
+  }
+
+  
+  .slider img{
+    min-width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      opacity: 0;
+  }
+  
+  .slider .slide :first-child {
+    z-index: 1;
+  }
+  
+  .slider .slide :nth-child(3) {
+    z-index: 0;
+  }  
+   
+  .navigation-button{
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    padding: 10px 0;
+    background-color: transparent;
+    width: 100vw;
+    justify-content: center;
+  }
+  
+  .dot{
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: 0 2px;
+    background-color: #F95400;
+    cursor: pointer;
+  }
+  .active,
+    .dot:hover {
+      background-color: white;;
+    }
+  
+  .right-button,.left-button{
+    position: absolute;
+    top: 0;
+    width: 10vw;
+    height: 80vh;
+    opacity:1;
+    z-index: 6; 
+  }
+  .left-button{
+    left: 0;
+    background-color: yellow;
+  }
+  
+  .right-button{
+    right: 0;
+    background-color: yellow;
+  
+  }
+  
+  .iframe-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    padding-top: 56.25%;
+  }
+  .resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }

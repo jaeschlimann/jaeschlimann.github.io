@@ -230,6 +230,7 @@ openProjectButton.addEventListener("click", function(){
   //openLeftPanel(leftPanel);
   onHomepage = false;
   isProjectPageOpen = true;
+  // infoButton.style.visibility = 'hidden';
 
 });
 
@@ -243,6 +244,7 @@ const buttontitle = document.querySelector(".project-title");
 
 buttontitle.addEventListener("click", function(){
   closeProjectPage();
+  
 });
 
 function closeProjectPage(){
@@ -262,7 +264,7 @@ function closeProjectPage(){
     openRightPanel(projectPanel2);
     isProjectsPageOpen = true;
   }
-
+  // infoButton.style.visibility = 'visible';
   isProjectPageOpen = false;
 
 }
