@@ -1,5 +1,7 @@
 console.clear();
 
+gsap.registerPlugin(Observer);
+
 document.onreadystatechange = function(){
   if(document.readyState !== "complete"){
    console.log("loading");

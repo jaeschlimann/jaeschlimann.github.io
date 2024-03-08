@@ -14,12 +14,12 @@
 
 
 body{
-    font-family: "Ambiant-Medium",Arial, Helvetica, sans-serif;
+    /* font-family: "Ambiant-Medium",Arial, Helvetica, sans-serif; */
     font-size: 15pt;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: black;
+    background-color: white;
 }
 
 /* ---- font system ----- */
@@ -60,6 +60,13 @@ a:hover{
     font-style: normal;
 }
 
+.nav:nth-child(n) a{
+    cursor:pointer;
+}
+.nav-sup>.col, .nav-bottom>.col{
+    /*padding:20px;*/
+}
+
 /* liens sur page projet */
 .project-link,.project-title{
     color: black;
@@ -78,22 +85,15 @@ a:hover{
 }
 
 
-.nav:nth-child(n) a{
-    cursor:pointer;
-}
-.nav-sup>.col, .nav-bottom>.col{
-    /*padding:20px;*/
-}
 
-.home-container {
+
+.homepage {
     width: 100%;
     height: 100vh;
     overflow: hidden;    
 }
 
-#home{
-    /* opacity: 0; */
-}
+
 
 .column {
     width: 50vw;
@@ -162,7 +162,7 @@ a:hover{
 
 .left-section{
     left: 0;
-    top: 100vh;
+    top: 0;
     background-color: white;
 }
 
@@ -172,7 +172,8 @@ a:hover{
 }
 .right-section{
     left: 50vw;
-    top:-100vh;
+    top:0;
+    /* top:-100vh; */
     background-color: aliceblue;
 }
 
@@ -183,7 +184,8 @@ overflow-y: auto;
 }
 
 .projectSectionTexte{
-    top: 100VH; 
+    /* top: 100VH;  */
+    top:0vh;
     left: 0;
     background-color: rgb(255, 255, 255);
 }
@@ -195,16 +197,14 @@ overflow-y: auto;
 
 .projectSectionImage{
     padding: 0;
-    top: -100vh;
+    /* top: -100vh; */
+    top:0;
     left: 50vw;
-
 }
 .img-project{
     height: 100%;
     opacity: 0;
 }
-
-
 
 
 .i-section{  
@@ -352,3 +352,19 @@ visibility: hidden;}
     height: 100%;
     border: 0;
   }
+
+
+ @media only screen and (max-width: 500px) {
+    h1{color: yellow;}
+    .row{
+
+    }
+    .column, .box{
+        width: 100vh;
+    }
+
+    .i-section{
+padding: 0;    }
+
+  
+}
